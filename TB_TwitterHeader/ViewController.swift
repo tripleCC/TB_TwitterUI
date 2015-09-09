@@ -93,19 +93,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             avatarTransform = CATransform3DTranslate(avatarTransform, 0, avatarSizeVariation, 0)
             avatarTransform = CATransform3DScale(avatarTransform, 1.0 - avatarScaleFactor, 1.0 - avatarScaleFactor, 0)
             
-            if offset <= offset_HeaderStop {
-                
-                if avatarImage.layer.zPosition < header.layer.zPosition{
-                    header.layer.zPosition = 0
-                }
-                
-            }else {
-                if avatarImage.layer.zPosition >= header.layer.zPosition{
-                    header.layer.zPosition = 2
-                }
-            }
         }
         
+        if offset <= offset_HeaderStop {
+            
+            if avatarImage.layer.zPosition < header.layer.zPosition{
+                header.layer.zPosition = 0
+            }
+            
+        }else {
+            if avatarImage.layer.zPosition >= header.layer.zPosition{
+                header.layer.zPosition = 2
+            }
+        }
         // Apply Transformations
         
         header.layer.transform = headerTransform
